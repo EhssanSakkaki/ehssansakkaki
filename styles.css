@@ -1,0 +1,459 @@
+/* RESET BODY */
+body {
+    margin: 0;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 60px; /* push content below 60px top bar */
+    padding-bottom: 60px; /* adjust amount as needed */
+}
+
+/* ------------------------------ */
+/*           TOP BAR              */
+/* ------------------------------ */
+
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    color: #C150CE;
+}
+
+.left-buttons {
+    position: absolute;
+    left: 0;
+    display: flex;
+    gap: 10px;
+    padding-left: 60px;
+    align-items: center;
+}
+
+/* Top bar icon buttons */
+.icon-btn img {
+    width: 1em;
+    height: 1em;
+filter: invert(41%) sepia(72%) saturate(747%) hue-rotate(265deg) brightness(92%) contrast(102%);    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.icon-btn:hover img {
+    filter: invert(53%) sepia(72%) saturate(747%) hue-rotate(330deg) brightness(95%) contrast(105%);
+}
+
+/* ------------------------------ */
+/*          PAGE SPACING          */
+/* ------------------------------ */
+
+.content {
+    padding-top: 80px; /* space under fixed top bar */
+}
+
+/* ------------------------------ */
+/*            HEADERS             */
+/* ------------------------------ */
+
+h1, h2, h3 {
+    font-family: 'Josefin Sans', sans-serif;
+    color: #C150CE;
+}
+
+h1 { font-size: 30px; font-weight: 700; }
+h2 { font-size: 26px; font-weight: 600; }
+h3 { font-size: 22px; font-weight: 500; color: #000; }
+
+/* ------------------------------ */
+/*         PARAGRAPHS             */
+/* ------------------------------ */
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 21px;
+    max-width: 60%;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+/* ------------------------------ */
+/*       FIXED MAIN BUTTONS       */
+/* ------------------------------ */
+
+/* Container holding the homework buttons */
+.button-list {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+
+}
+
+/* Main buttons styled based on your original design */
+.button-list a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;                    /* full width of container (90% of page) */
+    padding: 1em 0;                 /* vertical padding only */
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    
+
+    background-color: #fff;
+    color: #C150CE;
+    border-radius: 8px;
+    border: 2px solid #C150CE;
+    text-decoration: none;
+
+    transition: background-color 0.3s ease, transform 0.2s ease, letter-spacing 0.2s;
+}
+
+/* Hover effect */ /*     background-color: #F56153; */
+.button-list a:hover {
+    background-color: #ffffff;
+    transform: scale(1.02);
+    letter-spacing: 2px;
+    color: #C150CE;
+}
+
+/* Pressed state */
+.button-list a:active {
+    transform: scale(0.98);
+}
+
+
+
+
+/* --------------------- */
+/*  Image Pair-Week4  */
+/* --------------------- */
+
+/* Flex container for image pairs */
+.image-pair {
+    display: flex;
+    gap: 20px;           /* space between images */
+    justify-content: center;
+    flex-wrap: wrap;      /* ensures it wraps on small screens */
+    margin-bottom: 20px;
+}
+
+/* Individual image container */
+.image-container {
+    flex: 1 1 300px;      /* grow/shrink, min width 300px */
+    max-width: 45%;       /* prevents images from being too wide */
+    text-align: center;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;   /* optional rounded corners */
+}
+
+
+
+
+
+/* General setup for all buttons that will show an image on hover */
+/*.button-list a {
+    position: relative; /* required for pseudo-elements */
+
+
+/* Make all hover GIF images appear ABOVE everything */
+.button-list a::after {
+    z-index: 99999 !important;
+}
+
+/* Readings */
+.button-list a[href="readings.html"]::after {
+    content: '';
+    position: absolute;
+    top: -100%; 
+    right: 30%;
+    width: 150px;
+    height: 150px;
+    background-image: url('icons/reading01.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+.button-list a[href="readings.html"]:hover::after {
+    opacity: 1;
+}
+
+/* Homeworks */
+.button-list a[href="homeworks.html"]::after {
+    content: '';
+    position: absolute;
+    top: -150%; 
+    right: 60%;
+    width: 200px;
+    height: 200px;
+    background-image: url('icons/homeworks01.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+.button-list a[href="homeworks.html"]:hover::after {
+    opacity: 1;
+}
+
+
+
+
+/* Week Two */
+.button-list a[href="week02.html"]::after {
+    content: '';
+    position: absolute;
+    top: -100%; 
+    right: 50%;
+    width: 80px;
+    height: 80px;
+    background-image: url('icons/camera01.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+.button-list a[href="week02.html"]:hover::after {
+    opacity: 1;
+}
+
+/* Week Three */
+.button-list a[href="week03.html"]::after {
+    content: '';
+    position: absolute;
+    top: -70%; 
+    right: 40%;
+    width: 70px;
+    height: 70px;
+    background-image: url('icons/cameralens01.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+.button-list a[href="week03.html"]:hover::after {
+    opacity: 1;
+}
+
+/* Week Four */
+.button-list a[href="week04.html"]::after {
+    content: '';
+    position: absolute;
+    top: -400%; 
+    right: 55%;
+    width: 500px;
+    height: 500px;
+    background-image: url('icons/marqeetool01.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+.button-list a[href="week04.html"]:hover::after {
+    opacity: 1;
+}
+
+/* Week Five */
+.button-list a[href="week05.html"]::after {
+    content: '';
+    position: absolute;
+    top: -20%; 
+    right: 30%;
+    width: 80px;
+    height: 80px;
+    background-image: url('icons/colorwheel01.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+.button-list a[href="week05.html"]:hover::after {
+    opacity: 1;
+}
+
+/* Week Six */
+.button-list a[href="week06.html"]::after {
+    content: '';
+    position: absolute;
+    top: -120%; 
+    right: 55%;
+    width: 200px;
+    height: 200px;
+    background-image: url('icons/pentool01.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+
+}
+.button-list a[href="week06.html"]:hover::after {
+    opacity: 1;
+}
+
+/* Week Seven */
+.button-list a[href="week07.html"]::after {
+    content: '';
+    position: absolute;
+    top: -300%; 
+    right: 20%;
+    width: 400px;
+    height: 400px;
+    background-image: url('icons/colorpick01.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+.button-list a[href="week07.html"]:hover::after {
+    opacity: 1;
+}
+
+/* Week Eight */
+.button-list a[href="week08.html"]::after {
+    content: '';
+    position: absolute;
+    top: -30%; 
+    right: 60%;
+    width: 100px;
+    height: 100px;
+    background-image: url('icons/ps-ill01.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+.button-list a[href="week08.html"]:hover::after {
+    opacity: 1;
+}
+
+
+/* Week Nine */
+.button-list a[href="week09.html"]::after {
+    content: '';
+    position: absolute;
+    top: -30%; 
+    right: 30%;
+    width: 100px;
+    height: 100px;
+    background-image: url('icons/chart01.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+.button-list a[href="week09.html"]:hover::after {
+    opacity: 1;
+}
+
+
+
+
+/* Week Ten */
+.button-list a[href="is01.html"]::after {
+    content: '';
+    position: absolute;
+    top: -100%; 
+    right: 60%;
+    width: 150px;
+    height: 150px;
+    background-image: url('icons/compass01.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+.button-list a[href="is01.html"]:hover::after {
+    opacity: 1;
+}
+
+
+/* --------------------- */
+/*  CUSTOM CURSOR STYLE  */
+/* --------------------- */
+
+/* Hide default cursor */
+html, body {
+  cursor: none;
+}
+
+a,
+a *,
+button,
+button *,
+.icon-btn,
+.icon-btn *,
+a,
+input,
+textarea,
+select,
+label {
+  cursor: none !important;
+}
+
+/* Elastic cursor */
+.cursor {
+  --size: 40px;
+  --cursor-color: #C150CE; /* change freely */
+
+  position: fixed;
+  left: calc(var(--size) / -2);
+  top: calc(var(--size) / -2);
+
+  width: var(--size);
+  height: var(--size);
+
+  border: 2.5px solid var(--cursor-color); /* ✅ FIXED */
+  border-radius: 50%;
+  background: transparent;
+
+  pointer-events: none;
+  transform-origin: center center;
+  will-change: transform;
+
+  transition:
+    background-color 0.5s ease,
+    border-color 0.5s ease,
+    width 1s ease,
+    height 1s ease;
+
+
+  z-index: 9999;
+}
+
+/* ✅ Hover fill state */
+.cursor.is-hover {
+  background-color: var(--cursor-color);
+  width: 25px;   /* smaller than normal size */
+  height: 25px;
+
+    /* mix-blend-mode: differnce; */
+}
+
